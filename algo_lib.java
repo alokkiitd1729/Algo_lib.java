@@ -137,7 +137,8 @@ static void babystep(int g, int h, int p) throws  IOException{
 }
 // Digit DP
 static class digitDp{
-
+ //https://www.codechef.com/viewsolution/49438299
+//https://codeforces.com/contest/628/submission/124866556
 static pair[][] dp;
 static class pair{
     long e;long o;
