@@ -1,6 +1,8 @@
 /*
     No Prime Sum
     https://csacademy.com/contest/archive/task/no-prime-sum/solution/
+    
+    Kuhn's Algo O(VE)
 
 */
 
@@ -78,7 +80,7 @@ signed main(){
 	int mvc = 0;      // Minimum Vertex Covering == Maximum Bipartite Matching
 
 
-//######################################################### Before calling dfs we can find some random Match ###########################################################
+//############################################# Before calling dfs we can find some random Match to make it fast ###########################################################
 	for(int i = 0; i < nx; ++i)
 		if(mx[i] == -1){
 		    tot++;
