@@ -1,7 +1,7 @@
 /*
     https://cses.fi/problemset/task/1693/
     
-    Finding the Eulerian Path(trail)/Eulerian cycle(Circuit)   
+    Finding the Eulerian Path(trail)/Eulerian cycle(Circuit) for Directed Graph
     
     Hierholzer's Algo.   - O(V+E)
 */
