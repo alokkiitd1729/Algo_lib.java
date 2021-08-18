@@ -752,6 +752,7 @@ static double f(int n, int k,double p) {
 } 
  
  // Eucledian GCD
+ // long[] ={gcd(a,b),x,y}; s.t. = gcd(a,b)=a*x + b*y
 static long[] egcd(long a, long b) {
     if (b == 0) 
       return new long[] { a, 1, 0 };
