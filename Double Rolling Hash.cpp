@@ -9,12 +9,8 @@
     
     some ex.
     (1). Find all pairs of palindromic substring in O(NlogN) (bs at all index for largest palindrom)
-    
-    
+        
 */
-
-
-
 
 #include<bits/stdc++.h>
 using namespace std;
