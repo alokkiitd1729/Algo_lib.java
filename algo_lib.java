@@ -45,13 +45,25 @@ static class long_mult{
     }
 }
 
-  
+  static int[] Z_function(String s1){
+        char[] s=s1.toCharArray();
+        int n=s.length,l=0,r=0;
+        int[] z=new int[n];
+        for(int i=1;i<n;i++){
+            z[i]=Math.max(0,Math.min(z[i-l],r-i+1));
+            while(i+z[i]<n&&s[i+z[i]]==s[z[i]]){
+                l=i;r=i+z[i];
+                z[i]++;
+            }
+        }
+        return z;
+  }
 // KMP/Z function String processing... S-riginal string
 // KMP ->  P[i] = length  of longest prefix which is also suffix of S[0.....i](S.substring(0,i));
 // Z[i] = length of longest prefix of S which is also prefix of (the suffix string S[i,i+1,...n] - i.e suffix of S starting at i)
 //  KMP to Z — for i=1;i<n      Z[i−P[i]+1]=max(Z[i−P[i]+1],P[i])
 //  Z to KMP — for i=1;i<n      P[i+Z[i]−1]=max(P[i+Z[i]−1],z[i])
-static int kmp(String s2){
+static int[] kmp(String s2){
         int n=s2.length();
         int[] p=new int[n];
         for(int i=1;i<n;i++){
