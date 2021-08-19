@@ -1,6 +1,6 @@
 /*
           https://www.spoj.com/problems/ADAPHOTO/     (don't worry about TLE xD)
-          
+          https://leetcode.com/problems/longest-common-subpath/
           
     Note - Here we are using two mode. for substring s[i...j] 
     it'ss hashing is defined from a pair <hash1,hash2> == <mod1,mod2> 
@@ -38,6 +38,12 @@ void solve(){
     for(int i=1;i<n;i++){
         h1[i]=(1LL*h1[i-1]*b1+s[i])%mod1;
         h2[i]=(1LL*h2[i-1]*b2+s[i])%mod2;
+    }
+    for(int i=1;i+m1-1<n;i++){
+        int curr_hash1=(h1[i+m1-1]-1LL*h1[i-1]*p1[m1])%mod1;     // hash value for length m1 starting from index = i
+        int curr_hash2=(h2[i+m1-1]-1LL*h2[i-1]*p2[m1])%mod2;
+        if(curr_hash1<0)curr_hash1+=mod1       // Note we are subtracting the 2nd term above so MAKE SURE IT'S POSITIVE
+        if(curr_hash2<0)curr_hash1=+=mod2;
     }
 
 }
