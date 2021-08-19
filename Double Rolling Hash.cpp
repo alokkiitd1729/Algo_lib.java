@@ -17,8 +17,17 @@
 using namespace std;
 int n,m,max=1000000;
 
-//##################################################   (choose base, mod1,mod2)  #############################################################
-int b1=4001,b2=13777,mod1=1000000007,mod2=1000173169,max1=1000000;    // Note go for just single hash(1 mod) first if got WA then go for double hash
+//##################################################   (choose base, prime mod1,mod2)  #############################################################
+int b1=4001,b2=13777,mod1=1000000007,mod2=1000173169;    // Note go for just single hash(1 mod) first if got WA then go for double hash
+/*
+          Note 
+          you can choose large prime of around 15 digit and base of upto 3 digit (15+3=18 will fit in long) or (13 digit prime, upto 5 digit base)
+          And then we DON'T need double hashing because probabilty of success will be much higher with 15/13 digit prime than 1e9+7. 
+        
+          some Beautiful primes - (15 digit)= 311111111111113, 777737777777777.
+                                  (13 digit)= 3111111111113, 9999991111111.                    (just careful after base multiplication it should fit in Long)
+
+*/
 //##################################################################################################################################
 vector<int> h1(max1),h2(max1);
 vector<int> p1(max1),p2(max2);
