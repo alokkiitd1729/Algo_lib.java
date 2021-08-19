@@ -2,13 +2,14 @@
           https://www.spoj.com/problems/ADAPHOTO/     
           https://leetcode.com/problems/longest-common-subpath/
           
-    Note - Here we are using two mode. for substring s[i...j] 
-    it'ss hashing is defined from a pair <hash1,hash2> == <mod1,mod2> 
+    Note - Here we are using two mod for substring s[i...j] 
+    its hashing is defined from a pair <hash1,hash2> == <mod1,mod2> 
     Also no need to choose two different base (probabilty of collision is very low) 
     BUT I will say choose diff base also(will create 0 additional pain so why shouldn'e we go for it :))
     
     some ex.
     (1). Find all pairs of palindromic substring in O(NlogN) (bs at all index for largest palindrom)
+    .... And many more(most of string problem!) in O(N(logN)^2) or O(NlogN) or O(N)
         
 */
 
