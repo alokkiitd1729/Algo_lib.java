@@ -1,5 +1,5 @@
 /*
-          https://www.spoj.com/problems/ADAPHOTO/     (don't worry about TLE xD)
+          https://www.spoj.com/problems/ADAPHOTO/     
           https://leetcode.com/problems/longest-common-subpath/
           
     Note - Here we are using two mode. for substring s[i...j] 
