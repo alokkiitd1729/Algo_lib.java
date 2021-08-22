@@ -573,7 +573,6 @@ static long[][] mat_mul(long[][] a,long[][] b){
             for(int k=0;k<n;k++){
                 tmp[i][j]+=a[i][k]*b[k][j];  //%mod;
             }
-            tmp[i][j];
         }
     }
     return tmp;
