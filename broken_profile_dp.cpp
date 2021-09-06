@@ -1,3 +1,9 @@
+/*
+     https://coderevilbuggy.blogspot.com/2018/05/broken-profile-dynamic-programming.html
+
+     see cp algo too.
+*/
+
 int board[m+1][n+1], dp[m+1][(1<<n)];
 int n,m;
 
