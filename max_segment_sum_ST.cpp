@@ -28,20 +28,23 @@ void merge(segNode &node,segNode &cl,segNode &cr)
 
 
 
-void build(int node,int tl,int tr)
-{
+void build(int node,int tl,int tr){  
+	// node is the index or parent index in arr[] where segment[tl,tr] is stored. NOTE - id node is not the exacr=t index then 
+	// some part of [tl,tr] may be in the left child(cl=2*node) of node with indexed cl in arr and remaining half in the right child(cr=2*node+1) with indexed cr
+	
 	//deb(node,tl,tr);
 	if(tl==tr)
 	{
 		tree[node].left=tree[node].right=tree[node].segsum=tree[node].bestsum=arr[tl];
 		return;
 	}
-	int cl = node<<1;
+	int cl = node<<1;   // 
 	int cr = cl|1;
 	int tm = (tl+tr)>>1;
 	build(cl,tl,tm);
 	build(cr,tm+1,tr);
-	merge(tree[node],tree[cl],tree[cr]);
+	// above we did all the stuff in left child and right child
+	merge(tree[node],tree[cl],tree[cr]);   // here it taking only the index of current, left, right node index in arr_segment tree to update the parent info.
 }
 
 
