@@ -1,3 +1,6 @@
+// https://www.hackerrank.com/contests/goc-cdc-series-4/challenges/just-another-noob/problem
+
+
 import java.util.*;
 import java.io.*;
 public class CSES{
@@ -12,13 +15,14 @@ static long[] long_arr() throws IOException{String[] a=read().split(" ");long[] 
 static void sort(int[] a){List<Integer> l=new ArrayList<>();for(int z:a){l.add(z);}Collections.sort(l);for(int i=0;i<a.length;i++){a[i]=l.get(i);}}
 static void assign(){s1=new BufferedReader(new InputStreamReader(System.in));out=new BufferedWriter(new OutputStreamWriter(System.out));}
 //......................................@uthor_Alx..............................................
-static void update(int x, int delta,int[] BIT){
+static int BIT[];
+static void update(int x, int delta){
        while(x<BIT.length){
             BIT[x] += delta;
            x+=x&-x;
        }
 }
-static int query(int x,int[] BIT){
+static int query(int x){
     int sum = 0;
         while(x>0){
             sum += BIT[x];
@@ -26,56 +30,35 @@ static int query(int x,int[] BIT){
         }
      return sum;
 } 
-static int find(int[] BIT, int k, int max){
-	int l=1,r=max;
-	while(l<r){
-		int m=(l+r)/2;
-		int f=query(m,BIT);
-		if(f>k){
-			r=m-1;
-		}
-		else if(f<k){
-			l=m+1;
-		}
-		else{
-			r=m;
-		}
-	}
-	return l;
+static int find( int k,int n){.   // finds the least index j such that there are k many 1(s) BIT[1...j]
+    int l=1,r=n,ans=-1;
+    while(l<=r){
+        int m=(l+r)/2;
+        int f=query(m);
+        if(f>=k){
+            r=m-1;
+            ans=m;
+        }
+        else if(f<k){
+            l=m+1;
+        }
+    }
+    return ans;
 }
  
 public static void main(String[] args) throws  IOException{
-	        		    assign();
-	        		  	int[] n1=int_arr();
-	        		  	int n=n1[0],k=n1[1];
-	        		  	int[] arr=int_arr();
-	        		  	int[] c=arr.clone();
-	        		  	sort(c);
-	        		  	int j=1,k1=k;k=k/2+k%2;
-	        		  	Map<Integer,List<Integer>> map=new HashMap<>();
-	        		  	Map<Integer,Integer> ctr=new HashMap<>();
-	        		  	int[] map1=new int[n+2];
-	        		  	for(int x:c){
-	        		  		map1[j]=x;
-	        		  		ctr.put(x,0);
-	        		  		map.computeIfAbsent(x,key ->new ArrayList<>()).add(j);
-	        		  		j++;
-	        		  	}
-	        		  	int[] BIT=new int[n+2];
-	        		  	for(int i=0;i<n;i++){
-	        		  		int xx=ctr.get(arr[i]),mapped=map.get(arr[i]).get(xx);
-	        		  		ctr.put(arr[i],xx+1);
-	        		  		arr[i]=mapped;
-	        		  	}
-	        		  	for(int i=1;i<=k1;i++){
-	        		  		update(arr[i-1],1,BIT);
-	        		  	}
-	        		  	out.write(map1[find(BIT,k,n)]+" ");j=0;
-	        		  	for(int i=k1;i<n;i++){
-	        		  		update(arr[i],1,BIT);
-	        		  		update(arr[j],-1,BIT);
-	        		  		out.write(map1[find(BIT,k,n)]+" ");j++;
-	        		  	}
-                        out.flush();
-	}
+                        assign();
+                          int n=int_v(read());
+                          int[] arr=int_arr();
+                          BIT=new int[n+2];
+                          for(int i=1;i<=n;i++)update(i,1);
+                          int[] res=new int[n+1];
+                          for(int i=n-1;i>=0;i--){
+                              int tmp=find(arr[i],n);
+                              res[tmp]=i+1;
+                              update(tmp,-1);
+                          }
+                          for(int i=1;i<=n;i++)out.write(res[i]+" ");
+                          out.flush();
+    }
 }
