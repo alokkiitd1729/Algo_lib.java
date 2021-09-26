@@ -1,4 +1,5 @@
 /*
+      https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/practice-problems/algorithm/xor-tree-4-c6f207f4/editorial/
       https://www.codechef.com/viewsolution/51520214
       
       calculate any function  - f(path,u,v)..... where path is shortest path between (u,v)
