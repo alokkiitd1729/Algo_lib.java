@@ -1,6 +1,6 @@
 // GSS1.  -    https://www.spoj.com/problems/GSS1/
 // https://codeforces.com/blog/entry/18051
-
+//Range min with point update  //https://cses.fi/paste/8314791b63ecebb82c9818/
 #include<bits/stdc++.h>
 
 using namespace std;
