@@ -1,5 +1,5 @@
 // GSS1.  -    https://www.spoj.com/problems/GSS1/
-
+// https://codeforces.com/blog/entry/18051
 
 #include<bits/stdc++.h>
 
