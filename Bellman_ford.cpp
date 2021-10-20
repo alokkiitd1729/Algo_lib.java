@@ -1,6 +1,6 @@
 /*
     find -ve ccycle -     https://cses.fi/problemset/result/2252766/
-    
+                          https://cses.fi/paste/6e7f6eb0a413136e225fde/
     https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_B
     Single Source Shortest Path (Negative Edges)
     O(VE)
