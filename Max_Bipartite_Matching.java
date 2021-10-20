@@ -11,7 +11,7 @@ class Main {
     static boolean[] p=new boolean[200001];
     static List<Integer>[] g=new ArrayList[2000];
     static int f=1;
-    static int[] vis=new int[2000],mx,my;
+    static int[] vis=new int[2000],mx,my;    // match x, match y
     static void sieve(){
         p[0]=p[1]=true;
         for(int i=2;i<=500;i++){
