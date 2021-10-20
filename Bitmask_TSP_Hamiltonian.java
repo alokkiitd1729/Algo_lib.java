@@ -24,7 +24,7 @@ public class Solution {
                 }
             }
         }
-        int[][] dp=new int[n][1<<n];
+        int[][] dp=new int[n][1<<n];// dp[i][mask]=min time to start from 1 and travel all set_bit index and end at i
         for(int i=0;i<n;i++)Arrays.fill(dp[i],200000000);
         for(int i=0;i<n;i++)dp[i][1<<i]=g[0][i];
         for(int mask=1;mask<1<<n;mask++){
