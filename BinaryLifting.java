@@ -29,7 +29,7 @@ static void dfs(int u, int p,int h,long w){
 	    if(v[0]!=p) dfs(v[0],u,h+1,v[1]);
 	  }
 }
-static long ok(int u, int v){
+static long ok(int u, int v){ // find sum of weight of edges in shortest path b/w (u,v)....   can be used to find any function f(u,v)=Or,Xor,And
 	long res=0;
     if(dep[u]>dep[v]){
         int tmp=v;
@@ -48,8 +48,10 @@ static long ok(int u, int v){
             u=f[u][i];v=f[v][i];
         }
     }
+    //lca=u;
     if(u!=v){
         res+=dp[u][0]+dp[v][0];
+	// lca=parent(u)=parent(v)
     }
     return res;
 }
