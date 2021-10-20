@@ -43,3 +43,17 @@ void FST(bool inv,int op){
         }
     }
 }
+int main() {
+    cin>>n;
+    for (int i = 1; i <= n; i++) {
+        cin>>x; a[x]++;
+    }
+    a[0]++;
+    FST(0,AND);    // FFT (Point value Representation of polynomial)
+    for (int i = 0; i < sz; i++) a[i] = poww(a[i], n);      // finding n^th power of point value polynomial.  (See the csAcademy blog above)
+    FST(1,AND);   // Inverse FFT.   from point value to general polynomial
+    for (int i = 0; i < sz; i++)
+        if (a[i] != 0) cnt++;  // checks if there exist. sum subset such that their AND = i
+    cout<<cnt;
+    return 0;
+}
