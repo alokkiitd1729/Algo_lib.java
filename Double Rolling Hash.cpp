@@ -49,7 +49,7 @@ void solve(){
         int curr_hash1=(h1[i+m1-1]-1LL*h1[i-1]*p1[m1])%mod1;     // hash value for length m1 starting from index = i
         int curr_hash2=(h2[i+m1-1]-1LL*h2[i-1]*p2[m1])%mod2;
         if(curr_hash1<0)curr_hash1+=mod1       // Note we are subtracting the 2nd term above so MAKE SURE IT'S POSITIVE
-        if(curr_hash2<0)curr_hash1=+=mod2;
+        if(curr_hash2<0)curr_hash2=+=mod2;
     }
 
 }
