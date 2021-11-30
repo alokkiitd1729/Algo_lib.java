@@ -45,7 +45,8 @@ void solve(){
  
         In the first case, each Eulerian path is also an Eulerian circuit, and in the
         second case, the graph contains an Eulerian path that begins at the node whose
-        outdegree is larger and ends at the node whose indegree is larger.
+        outdegree is larger(a) and ends at the node whose indegree is larger(b) and we 
+        can make this Eulerian path Eulerian circuit by adding a directed edge from (b) to (a)
     */
     if(v.size()<2||v[0]!=1||v[1]!=n||out[1]!=1+in[1]||in[n]!=1+out[n]||euler.size()<=m){cout<<"IMPOSSIBLE";return;}
     reverse(euler.begin(),euler.end());
