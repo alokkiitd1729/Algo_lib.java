@@ -15,6 +15,7 @@ augroup autosave
     autocmd!
     autocmd TextChanged,TextChangedI * silent! write
 augroup END
+inoremap <expr> <CR> getline('.') =~ '{\s*}' ? "\<CR>\<Esc>O\<BS>\<Tab>" : "\<CR>"
 
 
 
