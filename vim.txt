@@ -3,8 +3,8 @@
 syntax on
 set autoindent
 set smartindent
-set shiftwidth=3
-set tabstop=3
+set shiftwidth=2
+set tabstop=2
 set cindent
 filetype plugin indent on
 set expandtab
@@ -16,6 +16,9 @@ augroup autosave
     autocmd TextChanged,TextChangedI * silent! write
 augroup END
 inoremap <expr> <CR> getline('.') =~ '{\s*}' ? "\<CR>\<Esc>O\<BS>\<Tab>" : "\<CR>"
+:set mouse=a
+set noendofline
+set scrolloff=5
 
 
 
