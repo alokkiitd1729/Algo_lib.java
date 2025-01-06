@@ -27,35 +27,40 @@ set scrolloff=5
 ########################################### Vim commands  ###########################################
 
 1. "shift {" - move up through blank lines
-
 2. "shift }" - move down through blank lines
-
 3. "[[" - top of the file
-
 4. "]]" - bottom of the file
-
 4. "/text" - search "text" by pressing ENTER, use 'n/N' for forword/backword search
-
 5. "dd" - delete the current line & cursor goes to next below line
-
 6. "u" - undo
-
 7. "ggVG" - 'ggVG' selects all content. 'gg' moves to first line. 'V' starts visual mode.
-            'G' jumps to last line thereby selecting from first to last line
-
-8. "A" - end of the line
-
+            'G' jumps to last line thereby selecting from first to last lin
+8. "I/A" - insert at start/end of the line
 9. "0" - begining of the line
-
 10. ":%w !pbcopy" - copy entire file
-
 11. "cmd+Opt" select the text the copy(command+c)
-
 12. "w" - Jump to the start of the next word: w
-
 13. "e" - Jump to the end of the current/next word: e
-
 14. "b" - Jump to the start of the previous word: b
+15. "shift+>" - to move selected lines(>0) by a tab to the right.
+16. "O" - opens a new line above the cursor
+17. "o" - opens a line below the cursor
+18. "gg/G" - goes to the top/bottom of the file
+19. "5cc" - deletes the current line & next 4 lines, followed by insert mode
+20. "5dd" - deletes the current line & next 4 lines
+21. "dw" - deletes a word 
+22. "5yy" - copy(yank) the current line & next(below) 4 line.
+23. "d c y" - followed by a cursor movement will delete/change(delete + insert mode)/yank the text 
+              covered by that movement.
+24. "p/P" - paste the yanked content below/above the cursor
+25. "v/V" - visual mode(No need to press just use mouse to select)- followed by "d c y"
+            operates on the selected text 
+26. 
+
+
+
+
+
 
 
 
